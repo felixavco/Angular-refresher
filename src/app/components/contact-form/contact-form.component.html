@@ -1,0 +1,20 @@
+<style>
+  .danger {color: red}
+  .success {color: green}
+</style>
+
+<form>
+  <input bind-disabled="isDisabled" type="text" value="{{ name }}">
+
+  <h2 [class]="dangerClass">{{ name }}</h2>
+  <h2 class="{{ successClass }}">{{ name }}</h2>
+  <h2 [class.danger]="hasErrors">{{ name }}</h2>
+  <h2 [ngClass]="toggleClasses">Xilews</h2>
+
+  <h2 [style.color]="'orange'">Xilews</h2>
+  <h2 [style.color]="hasErrors ? 'brown' : 'blue'">Xilews</h2>
+  <h2 [style.color]="airline">JetBlue</h2>
+  <h2 [ngStyle]="componentStyles">Component Styles</h2>
+
+  <button (click)="toggleError($event)">Toggle Error</button>
+</form>
